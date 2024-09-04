@@ -18,7 +18,7 @@ function Counter() {
     <div>
       <h1>Please Add or Subtract</h1>
       <div className="board">
-        <div id="value" style={{ color: value < 0 ? "red" : "black" }}>
+        <div id="value" style={{ color: value < 0 ? "red" : "white" }}>
           {value}
         </div>
         <div className="container">
@@ -38,6 +38,21 @@ function Counter() {
             symbol="-"
           />
         </div>
+        <Button
+        symbol="R"
+        action={() => {
+            setValue(0);
+            document.getElementById("number").value = "0";
+        }}
+    />
+    <Button
+        action={() => handleIncrement(2 * parseInt(document.getElementById("number").value, 10))}
+        symbol="++"
+/>
+    <Button
+        action={() => handleDecrement(2 * parseInt(document.getElementById("number").value, 10))}
+        symbol="--"
+/>
       </div>
     </div>
   );
